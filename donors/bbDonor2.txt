@@ -1,0 +1,25 @@
+HTTP/1.1 201 Created
+Content-Type: application/json
+Content-Length: 65
+Connection: clocase
+|||||||||Patient^info||||||||||
+DonnorCode: ^DC002^
+id: $9638527$
+fullname: $María^Dolores^Martínez^Prada$
+age: $59^años$
+gender: |Femenino||||||||
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\ParameterBag;
+$app->before(function (Request $request) {
+    if (0 === strpos($request->headers->get('Content-Type'), 'application/json')) {
+        $data = json_decode($request->getContent(), true);
+        $request->request->replace(is_array($data) ? $data : array());
+    }
+})
+VIH1/2:||NEG|||||||
+VHC:|||NEG||||||
+HTLV:||||NEG|||||
+VHB:|||||||NEG||
+CMV:||||||||NEG|
+SIPHILIS:||||NEG|||||
+CHAGAS:|NEG||||||||
